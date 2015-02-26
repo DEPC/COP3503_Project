@@ -10,27 +10,35 @@ Sprite
 
 Sprite:
 -Pos(x,y)
--Surface
+-Surface - Some image
 -Default Constructor
--Draw()
--Collide()
+-void Draw() - blit's Surface onto brackground surface
+-bool Collide() - Check's for collision with another sprite (per-pixel collision?) should output a boolean.
 
 Players extends Sprite:
--Speed
--team
--posession
--move()
--throwBall()
--captureBall()
+-float Speed - Set player speed
+
+-int team - number incicates the color (could be implemented with another data type)
+
+-void bool posession - Whether player has ball or not
+
+-move() - Changes x and y values for the sprite on the screen (implementation involves Speed value of player)
+
+-void throwBall() - Sends a ball at out a certain speed (probably involves blitting it on the background again 
+	       and making the ball go a certain direction according to how the player is moving)  	
+
+-void captureBall() - Method that takes in the bool value of collide() with ball and 
+		 player and turns posession to true or false and blitting the bal surface on the player.  
 
 Ball extend Sprite:
--speed 
--move()
+-speed - Set ball speed
+
+-void move() - Similar to Player move()
 
 Goal extends Sprite:
--team
--containBall
--addPoints()
+-int team
+-int containBall - how full the goal is
+-void addPoints() - adds points to goal
 
 Boundary extends Sprite:
 -upperB
